@@ -138,6 +138,10 @@ Modal.prototype.close = function() {
 }
 
 Modal.prototype.init = function (parameters) {
+  if (arguments.length == 0)
+    parameters = {};
+  if (!parameters.hasOwnProperty("draggable"))
+    parameters.draggable = true;
   var that = this;
 
   window.onload = function() {
